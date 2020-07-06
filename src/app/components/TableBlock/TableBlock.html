@@ -1,0 +1,27 @@
+<div class="blockContainer">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th *ngFor="let th of thList" scope="col">{{th}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tdList; index as rowIndex">
+        <td *ngFor="let ceil of row index as colIndex" scope="col">
+          <input
+            type="text"
+            (change)="handleChange($event, {rowIndex:rowIndex, colIndex:colIndex})"
+            value="{{ceil}}"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    (click)="setData($event)"
+    type="button"
+    class="btn btn-success btn-block"
+  >
+    Выгрузить
+  </button>
+</div>
